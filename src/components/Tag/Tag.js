@@ -7,4 +7,5 @@ function Tag({nom}) {
     );
 }
 
+// tag -> affiche un tag
 export default Tag;

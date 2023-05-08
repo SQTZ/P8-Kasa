@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="contenu">        
+    <div className="contenu">
+      {/* J'affiche le contenu une fois passé par la route */}        
         <App />      
     </div>
   </React.StrictMode>,

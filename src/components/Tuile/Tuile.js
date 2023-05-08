@@ -11,4 +11,7 @@ function Tuile({id, image, titre}) {
     );
 }
 
+// tuile-image -> l'image de l'appartement
+// tuile-sombre -> le filtre sombre
+// tuile-titre -> le titre de l'appartement
 export default Tuile;

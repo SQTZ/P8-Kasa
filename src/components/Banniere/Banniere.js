@@ -11,4 +11,7 @@ function Banniere({image, texte}) {
     );
 }
 
+// banniere-img -> l'image de la bannière
+// banniere-sombre -> le filtre sombre
+// banniere-txt -> le texte de la bannière
 export default Banniere;

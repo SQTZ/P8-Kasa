@@ -40,10 +40,16 @@ function Fiche() {
     return(
         <>
             {
+                 // Expression conditionnelle: si `ficheLogement` est défini, affiche la fiche de logement. Sinon, redirige l'utilisateur vers une page 404.
                 ficheLogement ? (
+
+                    // La fiche de logement
                     <div className="Fiche">
+                        {/*composant `Carrousel` qui affiche les images du logement passées en tant que propriété `images`. */}
                         <Carrousel images={ficheLogement?.pictures}/>
+                        {/*classe CSS `logements-propietaire`, qui contient les informations sur le logement et son propriétaire. */}
                         <div className="logements-propietaire">
+                            {/*classe CSS `information-logements`, qui contient le titre, l'emplacement et les tags du logement. */}
                             <div className="information-logements">
                                 <span className="titre-logement">{ficheLogement?.title}</span>
                                 <span className="endroit-logement">{ficheLogement?.location}</span>
@@ -51,6 +57,7 @@ function Fiche() {
                                     {tagsLogement}
                                 </div>
                             </div>
+                            {/*classe CSS `proprietaire-note`, qui contient les informations sur le propriétaire et la note du logement. */}
                             <div className="proprietaire-note">
                                 <div className="information-propietaire">
                                     <span className="nom-proprietaire">{ficheLogement?.host.name}</span>
@@ -61,12 +68,15 @@ function Fiche() {
                                 </div>
                             </div>
                         </div>
+                        {/*classe CSS `description-equipements`, qui contient la description et les équipements du logement. */}
                         <div className="description-equipements">
                             <Dropdown titre="Description" description={ficheLogement?.description}/>
                             <Dropdown titre="Équipements" description={equipementsLogement}/>
                         </div>
                     </div>
-                ) : <Navigate replace to="/404"/>
+                ) :
+                // Redirection vers la page 404
+                 <Navigate replace to="/404"/>
             }
         </>
     )

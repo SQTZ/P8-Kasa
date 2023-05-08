@@ -7,6 +7,7 @@ function Carrousel({images}) {
     let [imgAfficher, changerImg] = useState(0);
     let nombreImg = images.length;
 
+    //Lorsque je souhaite changer l'image précedente
     const imgPrecedente = () => {
         if(imgAfficher === 0) {
             changerImg(nombreImg - 1);
@@ -16,6 +17,7 @@ function Carrousel({images}) {
         return(changerImg);
     };  
 
+    //Lorsque je souhaite changer l'image suivante
     const imgSuivante = () => {
         if(imgAfficher === nombreImg - 1) {
             changerImg(nombreImg = 0);
@@ -28,7 +30,7 @@ function Carrousel({images}) {
     return(
         <div className="carrousel">
             {
-                nombreImg > 1 && <img className="fleche fleche-gauche" src={fleche} alt="Contenu précedént" onClick={imgPrecedente}/>
+                nombreImg > 1 && <img className="fleche fleche-gauche" src={fleche} alt="flèche précedént" onClick={imgPrecedente}/>
             }
             {
                 images.map((image, index) => {
@@ -38,7 +40,7 @@ function Carrousel({images}) {
                 })
             }
             {
-                nombreImg > 1 && <img className="fleche fleche-droite" src={fleche} alt="Contenu suivant" onClick={imgSuivante}/>
+                nombreImg > 1 && <img className="fleche fleche-droite" src={fleche} alt="flèche suivant" onClick={imgSuivante}/>
             }
         </div>
     );
